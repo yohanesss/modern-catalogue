@@ -1,5 +1,15 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import {
+  CategoryDropdownContainer,
+  HeaderContainer,
+  HeaderFeatureContainer,
+  LogoContainer,
+  LogoTextContainer,
+  NavigationContainer,
+  SearchContainer,
+  ShoppingCartContainer,
+} from "./navigation.styles";
 
 const Navigation = () => {
   // const [loggedIn, setLoggedIn] = useState(false);
@@ -7,16 +17,20 @@ const Navigation = () => {
 
   return (
     <>
-      <header>
-        <div className="logo-container">
-          <div>
-            <span>Modern</span>
-            <span>Catalogue</span>
-          </div>
-        </div>
-        <div className="category-dropdown">Category!</div>
-        <div className="search-container"></div>
-        <div className="navigation-container">
+      <HeaderContainer>
+        <LogoContainer>
+          <Link to="/">
+            <LogoTextContainer>Modern</LogoTextContainer>
+            <LogoTextContainer converted>Catalogue</LogoTextContainer>
+          </Link>
+        </LogoContainer>
+        <HeaderFeatureContainer>
+          <CategoryDropdownContainer>Category!</CategoryDropdownContainer>
+          <SearchContainer>
+            <input type="search" placeholder="Search Product..." />
+          </SearchContainer>
+        </HeaderFeatureContainer>
+        <NavigationContainer>
           <ul>
             <li>
               <Link to="/shop">Shop</Link>
@@ -35,11 +49,11 @@ const Navigation = () => {
               )}
             </li>
           </ul>
-          <div className="shopping-cart-icon">
+          <ShoppingCartContainer>
             <h3>Cart</h3>
-          </div>
-        </div>
-      </header>
+          </ShoppingCartContainer>
+        </NavigationContainer>
+      </HeaderContainer>
       <Outlet />
     </>
   );
