@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Navigation = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  // const [loggedIn, setLoggedIn] = useState(false);
+  const loggedIn = false;
 
   return (
     <>
@@ -30,7 +31,7 @@ const Navigation = () => {
               {loggedIn ? (
                 <span>User</span>
               ) : (
-                <Link to="authentication">Log In</Link>
+                <Link to="/authentication">Log In</Link>
               )}
             </li>
           </ul>
