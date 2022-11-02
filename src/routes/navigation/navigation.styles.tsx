@@ -1,16 +1,19 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  padding: 10px;
+  padding: 0 20px;
   box-shadow: 0px 2px 10px 0px gainsboro;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.2rem;
   position: sticky;
   top: 0;
   z-index: 2;
   background-color: #fff;
+`;
+
+export const LogoImage = styled.img`
+  width: 200px;
 `;
 
 type LogoTextContainerProps = {
@@ -23,11 +26,16 @@ export const LogoTextContainer = styled.span<LogoTextContainerProps>`
   background-color: ${(props) => (props.converted ? "#16181d" : "#fff")};
   color: ${(props) => (props.converted ? "#fff" : "#16181d")};
   font-size: 1.5rem;
+  font-weight: bold;
 `;
 
-export const LogoContainer = styled.div`
+type LogoContainerProps = {
+  withBorder?: boolean;
+};
+
+export const LogoContainer = styled.div<LogoContainerProps>`
   display: flex;
-  border: 1px solid #16181d;
+  border: ${(props) => (props.withBorder ? "1px solid #16181d" : "none")};
   width: fit-content;
   height: fit-content;
 
@@ -39,33 +47,36 @@ export const LogoContainer = styled.div`
 
 export const NavigationContainer = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   ul {
     list-style: none;
     padding: 0;
     display: flex;
     li {
-      min-width: 75px;
-      padding-left: 5px;
+      /* min-width: 75px; */
+      padding: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        span {
+          padding-left: 5px;
+        }
+      }
     }
   }
-`;
-
-export const HeaderFeatureContainer = styled.div`
-  display: flex;
-  padding: 0 5px;
-  width: 100%;
-`;
-
-export const CategoryDropdownContainer = styled.div`
-  flex: 2;
-  max-width: 80px;
-  padding: 0 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const SearchContainer = styled.div`
@@ -73,11 +84,25 @@ export const SearchContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex: 8;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gainsboro;
+  height: fit-content;
+  margin-right: 10px;
+  margin-top: 10px;
   input {
-    width: 100%;
+    /* width: 100%; */
+    border: none;
+    padding-left: 5px;
+
+    &:focus {
+      outline-width: 0;
+    }
   }
 `;
 
 export const ShoppingCartContainer = styled.div`
-  padding-right: 5px;
+  margin-left: 10px;
+  span {
+    padding-left: 2px;
+  }
 `;
