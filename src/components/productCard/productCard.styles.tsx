@@ -7,6 +7,10 @@ export const ProductCardContainer = styled.div`
   width: calc(25% - 40px);
   border-radius: 10px;
   position: relative;
+
+  @media (max-width: 480px) {
+    width: calc(50% - 40px);
+  }
 `;
 
 export const ProductImageContainer = styled.div`
@@ -54,6 +58,9 @@ export const ProductTitle = styled.h2`
   margin-bottom: 0;
   font-size: 1.2rem;
   line-height: 1.2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
 export const ProductBrand = styled.div`

@@ -12,6 +12,7 @@ import {
 } from "./navigation.styles";
 
 import companyLogo from "../../assets/company-logo.png";
+import Footer from "../../components/footer/footer.component";
 
 const Navigation = () => {
   // const [loggedIn, setLoggedIn] = useState(false);
@@ -114,6 +115,7 @@ const Navigation = () => {
         </HeaderInnerContainer>
       </HeaderContainer>
       <Outlet />
+      <Footer />
     </>
   );
 };

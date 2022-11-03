@@ -38,10 +38,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
             ).toFixed(2)}{" "}
             USD
           </ProductOriginalPrice>
-          <ProductPrice>{product.price} USD</ProductPrice>
+          <ProductPrice>{product.price.toFixed(2)} USD</ProductPrice>
         </>
       ) : (
-        <ProductPrice>{product.price}</ProductPrice>
+        <ProductPrice>{product.price.toFixed(2)}</ProductPrice>
       )}
     </ProductCardContainer>
   );
