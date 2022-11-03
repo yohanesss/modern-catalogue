@@ -3,13 +3,19 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header`
   padding: 0 20px;
   box-shadow: 0px 2px 10px 0px gainsboro;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 2;
   background-color: #fff;
+`;
+
+export const HeaderInnerContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
 `;
 
 export const LogoImage = styled.img`
