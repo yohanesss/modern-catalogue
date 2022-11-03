@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Product } from "../../types/products";
 import {
   DiscountBadge,
@@ -24,10 +25,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
           OFF
         </DiscountBadge>
       )}
-      <ProductImageContainer>
-        <ProductImage src={product.images[0]} />
-      </ProductImageContainer>
-      <ProductTitle>{product.title}</ProductTitle>
+      <Link to={`/product/${product.id}`}>
+        <ProductImageContainer>
+          <ProductImage src={product.images[0]} />
+        </ProductImageContainer>
+      </Link>
+      <Link to={`/product/${product.id}`}>
+        <ProductTitle>{product.title}</ProductTitle>
+      </Link>
       <ProductBrand>{product.brand}</ProductBrand>
       {product.discountPercentage ? (
         <>

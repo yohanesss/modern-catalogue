@@ -30,11 +30,11 @@ const FeaturedList = ({ productListing }: FeaturedListProps) => {
   return (
     <FeaturedListContainer>
       <FeaturedCollectionTitle>
-        {productListing.listing_title}
+        Our pick on {productListing.listing_title}
       </FeaturedCollectionTitle>
       <FeaturedProductListingContainer>
         {productListing.products.map((product) => (
-          <ProductCard product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </FeaturedProductListingContainer>
     </FeaturedListContainer>

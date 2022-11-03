@@ -11,6 +11,11 @@ export const ProductCardContainer = styled.div`
   @media (max-width: 480px) {
     width: calc(50% - 40px);
   }
+
+  a {
+    color: #343a46;
+    text-decoration: none;
+  }
 `;
 
 export const ProductImageContainer = styled.div`
@@ -44,6 +49,7 @@ export const ProductOriginalPrice = styled.div`
 export const ProductPrice = styled.div`
   font-size: 1.2rem;
   color: #cb4645;
+  font-weight: bold;
 `;
 
 export const ProductImage = styled.img`
@@ -51,12 +57,16 @@ export const ProductImage = styled.img`
   max-height: 200px;
   width: auto;
   height: auto;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 export const ProductTitle = styled.h2`
   margin-top: 10px;
   margin-bottom: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.2;
   text-overflow: ellipsis;
   overflow: hidden;

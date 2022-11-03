@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
+import AboutUs from "../../components/aboutUs/aboutUs.component";
 import FeaturedList from "../../components/featuredList/featuredList.component";
 import HomeBanner from "../../components/homeBanner/homeBanner.component";
 import { useCategoriesContext } from "../../contexts/categoriesContext";
 import { Category, ProductListing } from "../../types/products";
-import {
-  getCategories,
-  getProducts,
-  getProductsByCategory,
-} from "../../utils/products.utils";
-import { HomeContainer } from "./home.styles";
+import { getProductsByCategory } from "../../utils/products.utils";
+import { HomeContainer, HomeMotto } from "./home.styles";
 
 const Home = () => {
   const [productListings, setProductListings] = useState<
@@ -30,7 +27,6 @@ const Home = () => {
   useEffect(() => {
     const _getFeaturedProductListing = async () => {
       const productListings = await getFeaturedProductListing(categories);
-      console.log(productListings);
       setProductListings(productListings);
     };
     _getFeaturedProductListing();
@@ -46,7 +42,11 @@ const Home = () => {
   return (
     <HomeContainer>
       <HomeBanner />
+      <HomeMotto>Shop with Confidence</HomeMotto>
       {renderFeaturedList}
+      <HomeMotto>About Us</HomeMotto>
+      <AboutUs />
+      {/* // TODO:Testimony */}
     </HomeContainer>
   );
 };
