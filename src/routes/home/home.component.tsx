@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AboutUs from "../../components/aboutUs/aboutUs.component";
 import FeaturedList from "../../components/featuredList/featuredList.component";
 import HomeBanner from "../../components/homeBanner/homeBanner.component";
+import Testimony from "../../components/testimony/testimony.component";
 import { useCategoriesContext } from "../../contexts/categoriesContext";
 import { Category, ProductListing } from "../../types/products";
 import { getProductsByCategory } from "../../utils/products.utils";
@@ -42,10 +43,12 @@ const Home = () => {
   return (
     <HomeContainer>
       <HomeBanner />
-      <HomeMotto>Shop with Confidence</HomeMotto>
+      <HomeMotto>Hot Deals</HomeMotto>
       {renderFeaturedList}
       <HomeMotto>About Us</HomeMotto>
       <AboutUs />
+      <HomeMotto>Customer Testimony</HomeMotto>
+      <Testimony />
       {/* // TODO:Testimony */}
     </HomeContainer>
   );
